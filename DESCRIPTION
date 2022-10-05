@@ -1,11 +1,27 @@
 Package: safc
 Type: Package
-Title: What the package does (short line)
-Version: 1.0
-Date: 2022-10-05
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
-Imports: Rcpp (>= 1.0.9)
-LinkingTo: Rcpp, RcppArmadillo
+Title: Functions For Calculating Spatially Adaptive Floating Catchments
+Version: 0.1
+Author: David DeLara
+Maintainer: David DeLara <sfq1@cdc.gov>
+Description: This package provides functions to calculate Spatially Adaptive Floating Catchments.
+License: GPL (>= 2)
+Encoding: UTF-8
+Imports: 
+  dplyr,
+  purrr,
+	Rcpp (>= 1.0.9),
+	RcppArmadillo,
+LinkingTo: 
+	Rcpp, 
+	RcppArmadillo
+Suggests:
+  knitr,
+  rmarkdown,
+  testthat (>= 3.0.0)
+Depends:
+	R (>= 2.10)
+LazyData: true
+RoxygenNote: 7.2.1
+VignetteBuilder: knitr
+Config/testthat/edition: 3
