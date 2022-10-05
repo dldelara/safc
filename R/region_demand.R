@@ -9,7 +9,7 @@
 #' iteration's demand.
 #' @export
 region_demand = function(destinations, origins, demand, population, n_iter) {
-  . = NAME = V1 = V2 = V3 = V4 = dem_met = demand_met = fips = geometry = pop_65up = shp = NULL
+  #. = NAME = V1 = V2 = V3 = V4 = dem_met = demand_met = fips = geometry = pop_65up = shp = NULL
   start      = Sys.time()
   orgs       = as.matrix(origins[, 1:2])
   dests      = as.matrix(destinations[, 1:2])
