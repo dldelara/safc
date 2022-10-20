@@ -43,7 +43,7 @@ region_demand = function(destinations, origins, demand, population, n_iter) {
   access = tibble(fips = unique(destinations$fips), dem_met = apply(tot_dem, 1, median)) %>%
     right_join(shp, by = "fips") %>%
     mutate(demand_met = dem_met / demand) %>%
-    select(fips, dem_met, demand, demand_met, NAME, geometry)
+    select(fips, dem_met, demand, demand_met, name, geometry)
   if (n_iter == 1) return(list(access = access, catchment = catchment))
   return(list(tot_dem = tot_dem, access = access))
 }
