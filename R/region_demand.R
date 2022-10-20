@@ -25,7 +25,7 @@ region_demand = function(destinations, origins, demand, population, n_iter) {
     demand = destinations %>% group_by(fips) %>%
       transmute(demand = rmultinom(1, demand, pop_65up)) %>%
       .$demand
-    catchment = as_tibble(.catchment_areas(destinations, destinations, supply, demand, catch_fips)) %>%
+    catchment = as_tibble(.catchment_areas(orgs, dests, supply, demand, catch_fips)) %>%
       rename(fips = V1, facility = V2, demand = V3, cumdemand = V4) %>%
       mutate(fips = unique(destinations$fips)[fips + 1])
     tot_dem[, i] = catchment %>%
