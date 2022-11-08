@@ -6,8 +6,6 @@
 #' @author David DeLara <sfq1@@cdc.gov>
 #' @import Rcpp RcppArmadillo dplyr purrr
 #' @importFrom Rcpp evalCpp
-#' @importFrom stats median
-#' @importFrom stats rmultinom
 #' @useDynLib safc
 #' @name safc
 #' @keywords internal
