@@ -32,21 +32,18 @@ safc_availability = function(supply, demand, region, distmat = NULL, max_dist = 
       params$n_region
     )
   }
-  availability = cbind(
-    region,
-    availability = get_availability(
-      supply$supply,
-      demand$demand,
-      distmat,
-      as.numeric(factor(demand$GEOID)) - 1,
-      params$n_region,
-      params$n_origin
-    )
+  region$availability = get_availability(
+    supply$supply,
+    demand$demand,
+    distmat,
+    as.numeric(factor(demand$GEOID)) - 1,
+    params$n_region,
+    params$n_origin
   )
   mod = list(
-    availability = availability,
     supply       = supply,
     demand       = demand,
+    region       = region,
     distmat      = distmat
   )
   mod
