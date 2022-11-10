@@ -24,8 +24,8 @@ safc_availability = function(supply, demand, region, distmat = NULL, max_dist = 
   if (!is.null(n_boot)) {
     params$n_boot = n_boot
     demand$demand = get_demboot(
-      as.numeric(factor(demand$region)) - 1,
-      region$tot_demand,
+      as.numeric(factor(demand$GEOID)) - 1,
+      region$demand,
       demand$weight,
       n_boot,
       params$n_dest,
@@ -38,16 +38,16 @@ safc_availability = function(supply, demand, region, distmat = NULL, max_dist = 
       supply$supply,
       demand$demand,
       distmat,
-      as.numeric(factor(demand$region)) - 1,
+      as.numeric(factor(demand$GEOID)) - 1,
       params$n_region,
       params$n_origin
     )[, 1]
   )
   mod = list(
     availability = availability,
-    supply = supply,
-    demand = demand,
-    distmat = distmat
+    supply       = supply,
+    demand       = demand,
+    distmat      = distmat
   )
   mod
 }
