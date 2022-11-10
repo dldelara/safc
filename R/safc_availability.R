@@ -32,8 +32,7 @@ safc_availability = function(supply, demand, region, distmat = NULL, max_dist = 
       params$n_region
     )
   }
-  availability = mutate(
-    region,
+  availability = region %>% mutate(
     availability = get_availability(
       supply$supply,
       demand$demand,
